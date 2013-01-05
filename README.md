@@ -1,10 +1,5 @@
 # URI Regular Expression
 
-For ease of use (copy/paste), here are the expressions for either a single line
-match (i.e. validation/parsing of URIs) or multiple matching (i.e. finding URIs in a string):
-
-Also in this gist (see below): both, single and multi match expressions in a file for the raw goodness.
-
 #### Match indices
 
 Example URI:
@@ -22,6 +17,8 @@ match[6] = '/some/path/to/somewhere'  // path
 match[7] = '?search=regex&order=desc' // query
 match[8] = '#fragment'                // hash
 ```
+
+For ease of use (copy/paste), below (also as files in this repo) are the expressions for either a single line match (i.e. validation/parsing of URIs) or multiple matching (i.e. finding URIs in a string):
 
 #### Single
 ```javascript
