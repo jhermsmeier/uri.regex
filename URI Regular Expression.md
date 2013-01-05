@@ -8,14 +8,17 @@ Also in this gist (see below): both, single and multi match expressions in a fil
 #### Match indices
 
 ```javascript
-match[1] = protocol   // http
-match[2] = slashes    // //
-match[3] = authority  // user:password
-match[4] = host       // example.com
-match[5] = port       // 8080
-match[6] = path       // /some/path/to/somewhere
-match[7] = query      // ?search=regex&order=desc
-match[8] = hash       // #fragment
+
+// Example: http://user:password@example.com:8080/some/path/to/somewhere?search=regex&order=desc#fragment
+
+match[1] = 'http'                     // protocol
+match[2] = '//'                       // slashes
+match[3] = 'user:password'            // authority
+match[4] = 'example.com'              // host
+match[5] = '8080'                     // port
+match[6] = '/some/path/to/somewhere'  // path
+match[7] = '?search=regex&order=desc' // query
+match[8] = '#fragment'                // hash
 ```
 
 #### Single
