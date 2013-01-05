@@ -7,10 +7,12 @@ Also in this gist (see below): both, single and multi match expressions in a fil
 
 #### Match indices
 
+Example URI:
+```
+http://user:password@example.com:8080/some/path/to/somewhere?search=regex&order=desc#fragment
+```
+
 ```javascript
-
-// Example: http://user:password@example.com:8080/some/path/to/somewhere?search=regex&order=desc#fragment
-
 match[1] = 'http'                     // protocol
 match[2] = '//'                       // slashes
 match[3] = 'user:password'            // authority
