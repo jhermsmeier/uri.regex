@@ -1,4 +1,3 @@
-
 var spec = {
   
   scheme:     /([a-z][a-z0-9+.-]*?)/,
