@@ -32,9 +32,5 @@ with( spec ) {
   ].join( '' )
 }
 
-var single = new RegExp( '^' + pattern + '$', 'i' )
-var multi = new RegExp( pattern, 'i' )
-
-console.log( 'single', single )
-console.log( 'multi', multi )
+pattern = new RegExp( '^' + pattern + '$', 'i' )
 
