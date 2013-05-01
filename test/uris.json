@@ -1,0 +1,8 @@
+{
+  "http://user:password@example.com:8080/some/path/to/somewhere?search=regex&order=desc#fragment": [
+    "http", "//", "user:password", "example.com", "8080", "/some/path/to/somewhere", "search=regex&order=desc", "fragment"
+  ],
+  "mina:tcp://mainframeip:4444?textline=true": [
+    "mina", "undefined", "undefined", "tcp://mainframeip", "4444", "undefined", "?textline=true", "undefined"
+  ]
+}

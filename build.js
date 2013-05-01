@@ -33,4 +33,4 @@ with( spec ) {
 }
 
 pattern = new RegExp( '^' + pattern + '$', 'i' )
-
+module.exports = pattern
