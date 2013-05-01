@@ -88,6 +88,19 @@ describe( 'URI Regular Expression', function() {
     })
   })
   
+  it( 'should match percent encoded parts', function() {
+    test( 'http://www.fran%c3%a7ois.fr/fran%c3%a7ois', {
+      protocol: 'http',
+      slashes: '//',
+      authority: undefined,
+      host: 'www.fran%c3%a7ois.fr',
+      port: undefined,
+      path: '/fran%c3%a7ois',
+      query: undefined,
+      hash: undefined
+    })
+  })
+  
   it( 'should match RFC 3986\'s example URIs', function() {
     test( 'ftp://ftp.is.co.za/rfc/rfc1808.txt', {
       protocol: 'ftp',
