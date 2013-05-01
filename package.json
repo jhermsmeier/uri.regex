@@ -1,0 +1,29 @@
+{
+  
+  "name": "uri.regex",
+  "version": "0.0.0",
+  
+  "author": {
+    "name": "Jonas Hermsmeier",
+    "email": "jhermsmeier@gmail.com",
+    "url": "https://github.com/jhermsmeier"
+  },
+  
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jhermsmeier/uri.regex.git"
+  },
+  
+  "bugs": {
+    "url": "https://github.com/jhermsmeier/uri.regex/issues"
+  },
+  
+  "scripts": {
+    "test": "mocha"
+  },
+  
+  "devDependencies": {
+    "mocha": "*"
+  }
+  
+}

@@ -1,16 +1,11 @@
 
 var assert = require( 'assert' )
-var data = require( './uris' )
-
-const pattern = require( '../build' )
+var pattern = require( '../build' )
 
 function test( uri, expected ) {
-  
   var match = uri.match( pattern )
   var actual = [].slice.call( match, 1 )
-  
   assert.deepEqual( actual, expected )
-  
 }
 
 describe( 'URI Regular Expression', function() {
