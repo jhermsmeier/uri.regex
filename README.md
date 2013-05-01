@@ -18,8 +18,8 @@ match[3] = 'user:password'            // authority
 match[4] = 'example.com'              // host
 match[5] = '8080'                     // port
 match[6] = '/some/path/to/somewhere'  // path
-match[7] = '?search=regex&order=desc' // query
-match[8] = '#fragment'                // hash
+match[7] = 'search=regex&order=desc'  // query
+match[8] = 'fragment'                 // hash
 ```
 
 ## Stuff that DOES NOT work (yet?)
