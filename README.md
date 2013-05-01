@@ -1,28 +1,23 @@
 # URI Regular Expression [![Build Status](https://travis-ci.org/jhermsmeier/uri.regex.png?branch=master)](https://travis-ci.org/jhermsmeier/uri.regex)
 
-```javascript
-/^([a-z][a-z0-9+.-]*?)[:]([\/]{2})?(?:([a-z0-9-_.~!$&'()*+,;=:]*?)[@])?((?:[a-z0-9-._~%!$&'()*+,;=]*?)|(?:(?:[1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])[.]){3}(?:[1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])|(?:(?:(?:(?:[0-9a-f]{1,4}:){7}(?:[0-9a-f]{1,4}|:))|(?:(?:[0-9a-f]{1,4}:){6}(?::[0-9a-f]{1,4}|(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(?:(?:[0-9a-f]{1,4}:){5}(?:(?:(?::[0-9a-f]{1,4}){1,2})|:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(?:(?:[0-9a-f]{1,4}:){4}(?:(?:(?::[0-9a-f]{1,4}){1,3})|(?:(?::[0-9a-f]{1,4})?:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?:(?:[0-9a-f]{1,4}:){3}(?:(?:(?::[0-9a-f]{1,4}){1,4})|(?:(?::[0-9a-f]{1,4}){0,2}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?:(?:[0-9a-f]{1,4}:){2}(?:(?:(?::[0-9a-f]{1,4}){1,5})|(?:(?::[0-9a-f]{1,4}){0,3}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?:(?:[0-9a-f]{1,4}:){1}(?:(?:(?::[0-9a-f]{1,4}){1,6})|(?:(?::[0-9a-f]{1,4}){0,4}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(?::(?:(?:(?::[0-9a-f]{1,4}){1,7})|(?:(?::[0-9a-f]{1,4}){0,5}:(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(?:%.+)?))(?:[:]([0-9]+?))?(?:([:\/][a-z0-9-._~!$&'()*+,;=%:@\/]*?))?(?:[?]([\/?a-z0-9-._~!$&'()*+,;=%:@]*?))?(?:#([a-z0-9-._~%:@!$&'()*+,;=]*))?$/i
-```
+I found a perfectly working regular expression on [jmrware.com](http://jmrware.com/articles/2009/uri_regexp/URI_regex.html),
+stole it and added capture groups for the various parts. All credit for that regex goes to Jeff Roberson.
 
-#### Match indices
-
-Example URI:
-```
-http://user:password@example.com:8080/some/path/to/somewhere?search=regex&order=desc#fragment
-```
+### Example Usage of uri.js
 
 ```javascript
-match[1] = 'http'                     // protocol
-match[2] = '//'                       // slashes
-match[3] = 'user:password'            // authority
-match[4] = 'example.com'              // host
-match[5] = '8080'                     // port
-match[6] = '/some/path/to/somewhere'  // path
-match[7] = 'search=regex&order=desc'  // query
-match[8] = 'fragment'                 // hash
+var URI = require( './uri.js' )
+var input = 'http://user:password@example.com:8080/some/path/to/somewhere?search=regex&order=desc#fragment'
+
+var uri = new URI( input ) // =>
+{
+  protocol:  'http',                      // match[1]
+  slashes:   '//',                        // match[2]
+  authority: 'user:password',             // match[3]
+  host:      'example.com',               // match[4]
+  port:      '8080',                      // match[5]
+  path:      '/some/path/to/somewhere',   // match[6] || match[7] || match[8]
+  query:     'search=regex&order=desc',   // match[9]
+  hash:      'fragment'                   // match[10]
+}
 ```
-
-## Credits
-
-The IPv6 regular expression wasn't written by me, I found it somewhere sometime on the web, forgot where.
-I'll add the author of it here, when I find the source.
