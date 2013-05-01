@@ -22,11 +22,6 @@ match[7] = 'search=regex&order=desc'  // query
 match[8] = 'fragment'                 // hash
 ```
 
-## Stuff that DOES NOT work (yet?)
-
-- matching URIs with percent encoding
-- matching URIs with UTF8 reg-names
-
 ## Credits
 
 The IPv6 regular expression wasn't written by me, I found it somewhere sometime on the web, forgot where.
