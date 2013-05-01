@@ -11,7 +11,7 @@ pattern = pattern
   // Collapse whitespace
   .replace( /\s+/g, '' )
 
-module.exports = pattern
+module.exports = new RegExp( pattern )
 
 fs.writeFileSync(
   __dirname + '/pattern.js',
